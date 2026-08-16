@@ -16,9 +16,6 @@ export const metadata: Metadata = {
   title: "Ehsan Ehrari | Software Engineer, Mentor & Builder",
   description:
     "The interactive portfolio of Ehsan Ehrari - senior software engineer, quality specialist, game-development founder, and Code to Inspire mentor.",
-  other: {
-    "codex-preview": "development",
-  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -32,9 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
