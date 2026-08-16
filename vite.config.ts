@@ -1,4 +1,5 @@
 import vinext from "vinext";
+import tailwindcss from "@tailwindcss/vite";
 import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 import hostingConfig from "./.openai/hosting.json";
@@ -49,7 +50,7 @@ export default defineConfig(async () => {
   if (isVercel) {
     return {
       server,
-      plugins: [vinext(), nitro()],
+      plugins: [vinext(), tailwindcss(), nitro()],
     };
   }
 
@@ -65,6 +66,7 @@ export default defineConfig(async () => {
     server,
     plugins: [
       vinext(),
+      tailwindcss(),
       sites(),
       cloudflare({
         viteEnvironment: { name: "rsc", childEnvironments: ["ssr"] },
